@@ -7,10 +7,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Order {
 
-    private Long id; // Ändrad från long → Long
+    private Long id; 
     private CustomerInfo customerInfo;
     private List<OrderItem> items;
-    private Double totalAmount; // Ändrad från double → Double
+    private Double totalAmount; 
     private LocalDateTime orderDate;
 
     public Order() {

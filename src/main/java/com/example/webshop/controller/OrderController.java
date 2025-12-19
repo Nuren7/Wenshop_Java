@@ -18,20 +18,17 @@ public class OrderController {
         this.orderService = orderService;
     }
 
-    // POST /api/orders - skapa order
     @PostMapping
     public ResponseEntity<Order> createOrder(@RequestBody Order order) {
         Order savedOrder = orderService.createOrder(order);
         return new ResponseEntity<>(savedOrder, HttpStatus.CREATED);
     }
 
-    // GET /api/orders - hämta alla ordrar
     @GetMapping
     public List<Order> getAllOrders() {
         return orderService.getAllOrders();
     }
 
-    // GET /api/orders/{id} - hämta order med id
     @GetMapping("/{id}")
     public Order getOrderById(@PathVariable long id) {
         return orderService.getOrderById(id);

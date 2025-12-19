@@ -9,7 +9,6 @@ public class Product {
     private String imageUrl;
     private int stock;
 
-    // Tom konstruktor (krävs av Spring/JSON)
     public Product() {
     }
 
@@ -19,7 +18,6 @@ public class Product {
         this.name = name;
         this.description = description;
         this.price = price;
-        this.imageUrl = imageUrl;
         this.stock = stock;
     }
 

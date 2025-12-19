@@ -19,7 +19,6 @@ public class ProductRepository {
                 "Laptop",
                 "Bärbar dator för arbete och studier",
                 9999.0,
-                "https://example.com/laptop.jpg",
                 10
         ));
 
@@ -28,7 +27,6 @@ public class ProductRepository {
                 "Mobiltelefon",
                 "Smartphone med bra kamera",
                 5999.0,
-                "https://example.com/phone.jpg",
                 15
         ));
 
@@ -37,7 +35,6 @@ public class ProductRepository {
                 "Hörlurar",
                 "Trådlösa hörlurar",
                 1999.0,
-                "https://example.com/headphones.jpg",
                 20
         ));
     }
