@@ -5,44 +5,25 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class OrderItem {
 
-    private long productId;
-    private int quantity;
-    private Double priceAtPurchase; // Wrapper som kan vara null
+    private Long productId; // Ändrad från long → Long
+    private Integer quantity; // Ändrad från int → Integer
+    private Double priceAtPurchase; // Ändrad från double → Double
 
-    // Tom konstruktor (krävs för JSON)
     public OrderItem() {
     }
 
-    // Konstruktor
-    public OrderItem(long productId, int quantity, Double priceAtPurchase) {
+    public OrderItem(Long productId, Integer quantity, Double priceAtPurchase) {
         this.productId = productId;
         this.quantity = quantity;
         this.priceAtPurchase = priceAtPurchase;
     }
 
-    // Getters och setters
+    public Long getProductId() { return productId; }
+    public void setProductId(Long productId) { this.productId = productId; }
 
-    public long getProductId() {
-        return productId;
-    }
+    public Integer getQuantity() { return quantity; }
+    public void setQuantity(Integer quantity) { this.quantity = quantity; }
 
-    public void setProductId(long productId) {
-        this.productId = productId;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    public Double getPriceAtPurchase() {
-        return priceAtPurchase;
-    }
-
-    public void setPriceAtPurchase(Double priceAtPurchase) {
-        this.priceAtPurchase = priceAtPurchase;
-    }
+    public Double getPriceAtPurchase() { return priceAtPurchase; }
+    public void setPriceAtPurchase(Double priceAtPurchase) { this.priceAtPurchase = priceAtPurchase; }
 }

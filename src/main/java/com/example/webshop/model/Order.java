@@ -2,25 +2,21 @@ package com.example.webshop.model;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Order {
 
-    private Long id;
+    private Long id; // Ändrad från long → Long
     private CustomerInfo customerInfo;
     private List<OrderItem> items;
-    private double totalAmount;
+    private Double totalAmount; // Ändrad från double → Double
     private LocalDateTime orderDate;
 
-    // Tom konstruktor (krävs för JSON)
     public Order() {
     }
 
-    // Konstruktor
-    public Order(long id,
-                 CustomerInfo customerInfo,
-                 List<OrderItem> items,
-                 double totalAmount,
-                 LocalDateTime orderDate) {
+    public Order(Long id, CustomerInfo customerInfo, List<OrderItem> items, Double totalAmount, LocalDateTime orderDate) {
         this.id = id;
         this.customerInfo = customerInfo;
         this.items = items;
@@ -28,45 +24,18 @@ public class Order {
         this.orderDate = orderDate;
     }
 
-    // Getters och setters
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
 
-    public long getId() {
-        return id;
-    }
+    public CustomerInfo getCustomerInfo() { return customerInfo; }
+    public void setCustomerInfo(CustomerInfo customerInfo) { this.customerInfo = customerInfo; }
 
-    public void setId(long id) {
-        this.id = id;
-    }
+    public List<OrderItem> getItems() { return items; }
+    public void setItems(List<OrderItem> items) { this.items = items; }
 
-    public CustomerInfo getCustomerInfo() {
-        return customerInfo;
-    }
+    public Double getTotalAmount() { return totalAmount; }
+    public void setTotalAmount(Double totalAmount) { this.totalAmount = totalAmount; }
 
-    public void setCustomerInfo(CustomerInfo customerInfo) {
-        this.customerInfo = customerInfo;
-    }
-
-    public List<OrderItem> getItems() {
-        return items;
-    }
-
-    public void setItems(List<OrderItem> items) {
-        this.items = items;
-    }
-
-    public double getTotalAmount() {
-        return totalAmount;
-    }
-
-    public void setTotalAmount(double totalAmount) {
-        this.totalAmount = totalAmount;
-    }
-
-    public LocalDateTime getOrderDate() {
-        return orderDate;
-    }
-
-    public void setOrderDate(LocalDateTime orderDate) {
-        this.orderDate = orderDate;
-    }
+    public LocalDateTime getOrderDate() { return orderDate; }
+    public void setOrderDate(LocalDateTime orderDate) { this.orderDate = orderDate; }
 }
