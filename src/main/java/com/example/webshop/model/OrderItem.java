@@ -1,17 +1,20 @@
 package com.example.webshop.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class OrderItem {
 
     private long productId;
     private int quantity;
-    private double priceAtPurchase;
+    private Double priceAtPurchase; // Wrapper som kan vara null
 
     // Tom konstruktor (krävs för JSON)
     public OrderItem() {
     }
 
     // Konstruktor
-    public OrderItem(long productId, int quantity, double priceAtPurchase) {
+    public OrderItem(long productId, int quantity, Double priceAtPurchase) {
         this.productId = productId;
         this.quantity = quantity;
         this.priceAtPurchase = priceAtPurchase;
@@ -35,11 +38,11 @@ public class OrderItem {
         this.quantity = quantity;
     }
 
-    public double getPriceAtPurchase() {
+    public Double getPriceAtPurchase() {
         return priceAtPurchase;
     }
 
-    public void setPriceAtPurchase(double priceAtPurchase) {
+    public void setPriceAtPurchase(Double priceAtPurchase) {
         this.priceAtPurchase = priceAtPurchase;
     }
 }

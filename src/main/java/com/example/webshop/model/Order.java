@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Order {
 
-    private long id;
+    private Long id;
     private CustomerInfo customerInfo;
     private List<OrderItem> items;
     private double totalAmount;
